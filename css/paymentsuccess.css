@@ -1,0 +1,61 @@
+body{
+    background:#f2f2f2;
+    display: block;
+}
+
+.payment{
+	border:1px solid rgb(0, 0, 0);
+	height:700px;
+    border-radius:10px;
+    background:#fff;
+}
+.payment_header{
+	background: rgb(255, 135, 135);
+	padding:20px;
+    border-radius:20px 20px 0px 0px;
+}
+   
+.check{
+	margin:0px auto;
+	width:50px;
+	height:50px;
+	border-radius:100%;
+	background:#fff5f5;
+	text-align:center;
+}
+   
+.check i{
+    vertical-align:middle;
+	line-height:50px;
+	font-size:30px;
+}
+
+.content {
+    text-align:center;
+}
+
+.content  h1{
+    font-size:60px;
+    padding-top:25px;
+}
+
+.content a{
+    width:200px;
+    height:35px;
+    color:#000;
+    padding:5px 10px;
+    transition:all ease-in-out 0.3s;
+    text-decoration:none;
+}
+
+.content a:hover{
+    background:#f7afafd8;
+}
+
+p{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+div a{
+    font-size: 25px;
+}

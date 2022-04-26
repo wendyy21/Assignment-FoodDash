@@ -1,0 +1,386 @@
+* {box-sizing: border-box;}
+
+
+header {
+  text-align: left;
+  font-weight: bold;
+  font-size: 25px ;
+  padding: 10px;
+  background-color: #ffdbdb;
+  color: rgb(150, 38, 38);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  box-shadow: 50px 60px 50px rgb(104, 94, 72);
+  width: 1800px;
+  margin: 0px auto;
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+  background-color: #fff5f5;
+  background-repeat: no-repeat;
+  /* Pinky White background */
+}
+
+nav {
+  color: rgb(255, 208, 208);
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+div {
+  color: #fff5f5;
+}
+
+ul {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  list-style-type: none;
+  margin: 4px;
+  padding: 8px;
+  overflow: hidden;
+  border-radius: 30px;
+  background-color: rgb(121, 84, 84);
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  font-size: 23px;
+  width: 100px;
+  height: 66px;
+  padding: 16px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: rgb(167, 120, 120);
+  border-radius: 30px;
+}
+
+/* Side navigation menu */
+.sidenav {
+  height: 1435px;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(95, 73, 73);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  font-size: 40px;
+  margin-left: 100px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+  display: block;
+  border: none;
+  background: none;
+  width: 180px;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #ffdbdb;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: rgb(255, 131, 131);
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: rgb(168, 114, 114);
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: #886a6a;
+  margin-top: 100px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+
+}
+
+main input[type=text] {
+  float: none;
+  padding: 40px;
+  border: none;
+  border-radius: 50px;
+  margin-left: 650px;
+  font-size: 25px;
+  background-color: #ebc6c6;
+}
+
+button {
+  background-color: #886a6a;
+  padding: 30px;
+  color: #e0adad;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/*style the form selector*/
+form {
+  width: 300px;
+  height: 44px;
+  margin-top: 125px;
+  margin-bottom: 125px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon-bar {
+  width: 90px; /* Set a specific width */
+}
+
+.icon-bar a {
+  display: block; /* Make the links appear below each other instead of side-by-side */
+  text-align: center; /* Center-align text */
+  padding: 16px; /* Add some padding */
+  transition: all 0.3s ease; /* Add transition for hover effects */
+  color: rgb(255, 166, 166); 
+  font-size: 36px; /* Increased font-size */
+}
+
+.icon-bar a:hover {
+  background-color: #000; /* Add a hover color */
+}
+
+.active {
+  background-color: #bd7c7c; /* Add an active/current color */
+}
+
+  
+p {
+  font-style: oblique;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 80%;
+  color: rgb(0, 0, 0);
+}
+  
+.responsive {
+  padding: 0 5px;
+  float: left;
+  width: 24.99999%;
+}
+
+main.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.center {
+  text-align: center;
+}
+
+.banner{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 1800px;
+}
+.banner:hover{
+  border-style: groove;
+  border-color: #ff8686;
+}
+
+/* aboutuscontactus */
+.contactabout{
+	margin-bottom:60px;
+	font-size: 18px;
+	padding-left: 80px;
+	padding-top:15px ;
+	padding-bottom: 15px;
+	background-color: rgb(114, 80, 80);
+	color: white;
+}
+.contactabout a{
+	text-decoration: none;
+	color: white;
+}
+.contactabout a:hover{
+	text-decoration: underline;
+	font-weight: bold;
+	color: white;
+}
+.cusaus{
+	font-weight: bold;
+	font-size: 25px;
+}
+.aboutus table{
+	float: left;
+	width: 750px;
+	height: 250px;
+	margin-right: 70px;
+	border-style: none;
+	border-right-style: solid;
+	border-color: rgb(250, 250, 250);
+}
+.contactus table{
+	width: 450px;
+	height: 250px;
+	border-style: none;
+}
+.contactdetail{
+	padding-right: 40px;
+}
+
+/* footer */
+footer 
+{
+  display: block;
+  margin-top: 50px;
+  padding: 0px;
+  text-align: center;
+  font-size: 20px;
+  color: rgba(255, 121, 121, 0.795);
+}
+
+hr.footer_start {
+  border: 4px solid rgb(121, 84, 84);
+}
+
+.footer {
+  color: #fff5f5;
+  position: relative;
+  width: 1800px;
+  height: 250px;
+  bottom: 0;
+  margin-top: 100px;
+  background-color: rgb(153, 109, 109);
+  padding-bottom: 90px;
+}
+.footer h2 {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.footer a {
+  font-size: 14px;
+  font-weight: normal;
+  padding-top: -100px;
+  padding-left: 30px;
+  color: rgb(252, 228, 228);
+}
+.footer h3 {
+  position: absolute;
+  font-weight: bold;
+  font-size: 15px;
+  bottom: 0;
+  padding-left: 725px;
+}
+.footer img {
+  position: absolute;
+  left: 55px;
+  top: 50px;
+  width: 250px;
+}
+.footer a:visited {
+  color: black;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 350px;
+  padding: 5px;
+}
+
+.column:hover {
+  border: 2px #886a6a dashed;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.coupon {
+  border: 3px dashed rgb(82, 0, 0);
+  border-radius: 15px; /* Rounded border */
+  margin-left: 150px;
+  width: 1500px;
+}
+
+.container {
+  border-radius: 15px;
+  padding: 2px 16px;
+  background-color: #ffe1e1;
+  color: rgb(245, 98, 0);
+}
+
+.expire {
+  color: rgb(245, 98, 0);
+  text-align: center;
+  font-size: 18px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(141, 108, 108); 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #8d4848; 
+}

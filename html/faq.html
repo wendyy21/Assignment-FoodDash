@@ -1,0 +1,214 @@
+<!-- FAQ -->
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content=" Food and Grocery You Love, We Delievered. ">
+    <meta name="keywords" content="Food,Grocery,Beverages">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Phone size diff need this to adjust -->
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/faq.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Food Dash | FAQ</title>
+    <link rel="icon" type="image/x-icon" href="/icon/favicon (2).ico">
+</head>
+
+<body>
+    <audio id="audio" preload="auto" src="/audio/comfybgm.mp3" autoplay loop>
+        Unsupported in Firefox
+    </audio>
+
+    <script>
+        audio = document.getElementById("audio")
+        audio.volume = 0.04
+
+        function setCookie(c_name, value, exdays) {
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() + exdays);
+            var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+            document.cookie = c_name + "=" + c_value;
+        }
+
+        function getCookie(c_name) {
+            var i, x, y, ARRcookies = document.cookie.split(";");
+            for (i = 0; i < ARRcookies.length; i++) {
+                x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+                y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+                x = x.replace(/^\s+|\s+$/g, "");
+                if (x == c_name) {
+                    return unescape(y);
+                }
+            }
+        }
+
+        var song = document.getElementsByTagName('audio')[0];
+        var played = false;
+        var tillPlayed = getCookie('timePlayed');
+        function update() {
+            if (!played) {
+                if (tillPlayed) {
+                    song.currentTime = tillPlayed;
+                    song.play();
+                    played = true;
+                }
+                else {
+                    song.play();
+                    played = true;
+                }
+            }
+
+            else {
+                setCookie('timePlayed', song.currentTime);
+            }
+        }
+        setInterval(update, 1000);
+    </script>
+    <nav id="topnav"></nav>
+    <nav id="sidenav"></nav>
+    <main>
+        <br>
+        <header>FAQ (Frequently Asked Questions)</header>
+        <br>
+        <button class="accordion">How can I order food in Malaysia</button>
+        <div class="panel">
+            <p><b>1. Find a restaurant.</b> Enter your delivery address in the location form
+                to see all the places that deliver to your location.
+                It can be your home, office, a hotel or even parks!
+                <br>
+                <br>
+                <b>2. Choose your dishes.</b> Browse the menu of the chosen restaurant,
+                select your dishes and add them to your basket. When you are done,
+                press the "Checkout" button.
+                <br>
+                <br>
+                <b>3. Checkout & Payment.</b> Check your order, payment method selection
+                and exact delivery address. Simply follow the checkout instructions
+                from there.
+                <br>
+                <br>
+                <b>4. Delivery.</b> We will send you an email and SMS confirming your
+                order and delivery time. Sit back, relax and wait for piping hot food to be conveniently delivered to
+                you!
+            </p>
+        </div>
+
+        <button class="accordion">How can I use the voucher?</button>
+        <div class="panel">
+            <p><b>1. Add food to your cart.</b> View your cart and procced to checkout.
+                <br>
+                <br>
+                <b>2. Redeem your voucher.</b> Select the voucher you wish to redeem. If the voucher is valid, the
+                discount will be calculated automatically.
+                <br>One voucher can be used per order.
+                <br>
+                Do feel free to contact us if your voucher is not working, and we will sort this out.
+            </p>
+        </div>
+
+        <button class="accordion">How to cancel or change my order?</button>
+        <div class="panel">
+            <p><b>Contact us though the Live Chat service.</b>We can let the restaurant know before they start preparing
+                the food.
+                <br>
+                &nbsp; **Regarding the refund process on the payment you have made, do contact us but not the
+                restaurant.**
+            </p>
+        </div>
+
+        <button class="accordion">Is the delivery service still available during pandemic?</button>
+        <div class="panel">
+            <p><b>Yes.</b> Food Dash are providing the delivery service to reduce the risk citizens infected by virus.
+                <br>
+                &nbsp; **You can also request contactless delivery by dropping a message to our rider.
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your food will be leave at the lobby or the place specified by you without
+                physical contact to the rider.**
+            </p>
+        </div>
+
+        <button class="accordion">How to make payment?</button>
+        <div class="panel">
+            <p><b>1. Pay for your food.</b> Once you are done with the ordering section, you will be directed to the
+                checkout page.
+                <br>
+                <br>
+                <b>2. Choose your payment option.</b> The payment option provided by us are Visa payment, Amex or Master
+                Card.
+                <br>
+                <br>
+                <b>3. Fill in the payment detail.</b> Fill in the payment detail needed according to the guidance
+                provided.
+                <br>
+                <br>
+                <b>4. Continue to checkout.</b> Click the checkout button. You will be directed to the payment
+                successful page once you are done.
+            </p>
+        </div>
+
+        <script src="/html/login.js"></script>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            }
+        </script>
+
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                document.body.style.backgroundColor = "white";
+            }
+
+            //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+
+            for (i = 0; i < dropdown.length; i++) {
+                dropdown[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var dropdownContent = this.nextElementSibling;
+                    if (dropdownContent.style.display === "block") {
+                        dropdownContent.style.display = "none";
+                    }
+                    else {
+                        dropdownContent.style.display = "block";
+                    }
+                });
+            }   
+        </script>
+    </main>
+</body>
+<footer>
+    <div class="footer">
+        <hr class="footer_start">
+        <a href="#" class="fa fa-facebook" style="color:white; font-size: 20px;"></a>
+        <a href="#" class="fa fa-twitter" style="color:white; font-size: 20px;"></a>
+        <a href="#" class="fa fa-instagram" style="color:white; font-size: 20px;"></a>
+
+        <h2 class="footername">FOOD DASH COMPANY OFFICIAL WEBSITE</h2>
+        <a href="https://www.google.com/maps/place/Tunku+Abdul+Rahman+University+College/@3.2161697,101.7268329,17z/data=!3m1!4b1!4m5!3m4!1s0x31cc3843bfb6a031:0x2dc5e067aae3ab84!8m2!3d3.2161643!4d101.7290216"
+            class="footeraddress" target="_blank">Kampus Utama, Jalan Genting Kelang, 53300 Kuala Lumpur, Wilayah
+            Persekutuan Kuala Lumpur
+            Malaysia</a>
+        <h3 class="footercopy">Copyright &#169; 2022 FOOD DASH. All rights reserved &#174;</h3>
+    </div>
+
+</footer>

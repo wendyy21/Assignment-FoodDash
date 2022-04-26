@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/login.css">
+  <title>Food Dash</title>
+  <link rel="icon" type="image/x-icon" href="/icon/favicon (2).ico">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Food Dash | Sign Up</title>
+</head>
+
+<body>
+  <audio id="audio" preload="auto" src="/audio/comfybgm.mp3" autoplay loop>
+    Unsupported in Firefox
+  </audio>
+
+  <script>
+    audio = document.getElementById("audio")
+    audio.volume = 0.04
+
+    function setCookie(c_name, value, exdays) {
+      var exdate = new Date();
+      exdate.setDate(exdate.getDate() + exdays);
+      var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+      document.cookie = c_name + "=" + c_value;
+    }
+
+    function getCookie(c_name) {
+      var i, x, y, ARRcookies = document.cookie.split(";");
+      for (i = 0; i < ARRcookies.length; i++) {
+        x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+        y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+        x = x.replace(/^\s+|\s+$/g, "");
+        if (x == c_name) {
+          return unescape(y);
+        }
+      }
+    }
+
+    var song = document.getElementsByTagName('audio')[0];
+    var played = false;
+    var tillPlayed = getCookie('timePlayed');
+    function update() {
+      if (!played) {
+        if (tillPlayed) {
+          song.currentTime = tillPlayed;
+          song.play();
+          played = true;
+        }
+        else {
+          song.play();
+          played = true;
+        }
+      }
+
+      else {
+        setCookie('timePlayed', song.currentTime);
+      }
+    }
+    setInterval(update, 1000);
+  </script>
+  <div class="container">
+    <div class="logo">
+      <img src="/Image/Food Dash-logos_white.png" alt="Logo">
+    </div>
+
+    <div class="title">Sign Up</div>
+    <div class="sub-title">Please fill in the blank to create an account.</div>
+
+    <div class="form">
+
+      <div class="email">
+        <svg class="svg-icon" viewBox="0 0 20 20">
+          <path
+            d="M12.075,10.812c1.358-0.853,2.242-2.507,2.242-4.037c0-2.181-1.795-4.618-4.198-4.618S5.921,4.594,5.921,6.775c0,1.53,0.884,3.185,2.242,4.037c-3.222,0.865-5.6,3.807-5.6,7.298c0,0.23,0.189,0.42,0.42,0.42h14.273c0.23,0,0.42-0.189,0.42-0.42C17.676,14.619,15.297,11.677,12.075,10.812 M6.761,6.775c0-2.162,1.773-3.778,3.358-3.778s3.359,1.616,3.359,3.778c0,2.162-1.774,3.778-3.359,3.778S6.761,8.937,6.761,6.775 M3.415,17.69c0.218-3.51,3.142-6.297,6.704-6.297c3.562,0,6.486,2.787,6.705,6.297H3.415z">
+          </path>
+        </svg>
+        <input required id="email" type="email" placeholder="Enter email">
+      </div>
+
+      <div class="password">
+        <svg class="svg-icon" viewBox="0 0 20 20">
+          <path
+            d="M17.308,7.564h-1.993c0-2.929-2.385-5.314-5.314-5.314S4.686,4.635,4.686,7.564H2.693c-0.244,0-0.443,0.2-0.443,0.443v9.3c0,0.243,0.199,0.442,0.443,0.442h14.615c0.243,0,0.442-0.199,0.442-0.442v-9.3C17.75,7.764,17.551,7.564,17.308,7.564 M10,3.136c2.442,0,4.43,1.986,4.43,4.428H5.571C5.571,5.122,7.558,3.136,10,3.136 M16.865,16.864H3.136V8.45h13.729V16.864z M10,10.664c-0.854,0-1.55,0.696-1.55,1.551c0,0.699,0.467,1.292,1.107,1.485v0.95c0,0.243,0.2,0.442,0.443,0.442s0.443-0.199,0.443-0.442V13.7c0.64-0.193,1.106-0.786,1.106-1.485C11.55,11.36,10.854,10.664,10,10.664 M10,12.878c-0.366,0-0.664-0.298-0.664-0.663c0-0.366,0.298-0.665,0.664-0.665c0.365,0,0.664,0.299,0.664,0.665C10.664,12.58,10.365,12.878,10,12.878">
+          </path>
+        </svg>
+        <input id="password" type="password" placeholder="New password" oninput="toggleEyeVisibility()">
+        <svg class="svg-icon" viewBox="0 0 20 20" style="cursor: pointer; height: 0px;" onclick="toggleVisibility();"
+          id="btnEye">
+          <path
+            d="M10,6.978c-1.666,0-3.022,1.356-3.022,3.022S8.334,13.022,10,13.022s3.022-1.356,3.022-3.022S11.666,6.978,10,6.978M10,12.267c-1.25,0-2.267-1.017-2.267-2.267c0-1.25,1.016-2.267,2.267-2.267c1.251,0,2.267,1.016,2.267,2.267C12.267,11.25,11.251,12.267,10,12.267 M18.391,9.733l-1.624-1.639C14.966,6.279,12.563,5.278,10,5.278S5.034,6.279,3.234,8.094L1.609,9.733c-0.146,0.147-0.146,0.386,0,0.533l1.625,1.639c1.8,1.815,4.203,2.816,6.766,2.816s4.966-1.001,6.767-2.816l1.624-1.639C18.536,10.119,18.536,9.881,18.391,9.733 M16.229,11.373c-1.656,1.672-3.868,2.594-6.229,2.594s-4.573-0.922-6.23-2.594L2.41,10l1.36-1.374C5.427,6.955,7.639,6.033,10,6.033s4.573,0.922,6.229,2.593L17.59,10L16.229,11.373z">
+          </path>
+        </svg>
+      </div>
+
+      <div class="password">
+        <svg class="svg-icon" viewBox="0 0 20 20">
+          <path
+            d="M17.308,7.564h-1.993c0-2.929-2.385-5.314-5.314-5.314S4.686,4.635,4.686,7.564H2.693c-0.244,0-0.443,0.2-0.443,0.443v9.3c0,0.243,0.199,0.442,0.443,0.442h14.615c0.243,0,0.442-0.199,0.442-0.442v-9.3C17.75,7.764,17.551,7.564,17.308,7.564 M10,3.136c2.442,0,4.43,1.986,4.43,4.428H5.571C5.571,5.122,7.558,3.136,10,3.136 M16.865,16.864H3.136V8.45h13.729V16.864z M10,10.664c-0.854,0-1.55,0.696-1.55,1.551c0,0.699,0.467,1.292,1.107,1.485v0.95c0,0.243,0.2,0.442,0.443,0.442s0.443-0.199,0.443-0.442V13.7c0.64-0.193,1.106-0.786,1.106-1.485C11.55,11.36,10.854,10.664,10,10.664 M10,12.878c-0.366,0-0.664-0.298-0.664-0.663c0-0.366,0.298-0.665,0.664-0.665c0.365,0,0.664,0.299,0.664,0.665C10.664,12.58,10.365,12.878,10,12.878">
+          </path>
+        </svg>
+        <input id="cfmpassword" type="password" placeholder="Confirm password" oninput="toggleEyeVisibility()">
+        <svg class="svg-icon" viewBox="0 0 20 20" style="cursor: pointer; height: 0px;" onclick="toggleVisibility2();"
+          id="btnEye2">
+          <path
+            d="M10,6.978c-1.666,0-3.022,1.356-3.022,3.022S8.334,13.022,10,13.022s3.022-1.356,3.022-3.022S11.666,6.978,10,6.978M10,12.267c-1.25,0-2.267-1.017-2.267-2.267c0-1.25,1.016-2.267,2.267-2.267c1.251,0,2.267,1.016,2.267,2.267C12.267,11.25,11.251,12.267,10,12.267 M18.391,9.733l-1.624-1.639C14.966,6.279,12.563,5.278,10,5.278S5.034,6.279,3.234,8.094L1.609,9.733c-0.146,0.147-0.146,0.386,0,0.533l1.625,1.639c1.8,1.815,4.203,2.816,6.766,2.816s4.966-1.001,6.767-2.816l1.624-1.639C18.536,10.119,18.536,9.881,18.391,9.733 M16.229,11.373c-1.656,1.672-3.868,2.594-6.229,2.594s-4.573-0.922-6.23-2.594L2.41,10l1.36-1.374C5.427,6.955,7.639,6.033,10,6.033s4.573,0.922,6.229,2.593L17.59,10L16.229,11.373z">
+          </path>
+        </svg>
+      </div>
+
+      <p>By creating an account you agree to our
+        <a href="#" style="color:rgb(36, 22, 223)">
+          Terms & Privacy.
+        </a>
+      </p>
+
+      <button onclick="login();" class="signin-btn">SIGN UP</button>
+
+    </div>
+
+  </div>
+
+  <script>
+    function toggleEyeVisibility() {
+      var btnEye = document.getElementById("btnEye");
+      var btnEye2 = document.getElementById("btnEye2");
+      var pwinput = document.getElementById("password");
+      var pwinput2 = document.getElementById("cfmpassword");
+      if (pwinput.value !== "") {
+        btnEye.style.height = "25px";
+      } else {
+        btnEye.style.height = "0px";
+      }
+
+      if (pwinput2.value !== "") {
+        btnEye2.style.height = "25px";
+      } else {
+        btnEye2.style.height = "0px";
+      }
+
+    }
+
+    function toggleVisibility() {
+      var pwinput = document.getElementById("password");
+      pwinput.type = (pwinput.type === "password") ? "text" : "password";
+
+    }
+
+    function toggleVisibility2() {
+      var pwinput2 = document.getElementById("cfmpassword");
+      pwinput2.type = (pwinput2.type === "password") ? "text" : "password";
+    }
+
+    function login() {
+
+      var email = document.getElementById('email');
+      var pwinput = document.getElementById("password").value;
+      var pwinput2 = document.getElementById("cfmpassword").value;
+
+      if (email.value == "" || pwinput == "" || pwinput2 == "") {
+        alert("Please enter email or password or confirm password!")
+      }
+      else if (email.checkValidity() != true) {
+        alert("Please enter valid email")
+      }
+      else if (pwinput != pwinput2) {
+        alert("Password and confirm password does not match!")
+      }
+      else {
+        alert("Registered account successfully! Press OK to go to login page")
+        window.location.href = "index.html";
+      }
+    }
+  </script>
+</body>
+
+</html>

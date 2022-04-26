@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="description" content=" Food and Grocery You Love, We Delievered. ">
+   <meta name="keywords" content="Food,Grocery,Beverages">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Phone size diff need this to adjust -->
+   <link rel="stylesheet" href="/css/paymentsuccess.css">
+   <!-- Add icon library -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <title>Food Dash | Payment Succesful</title>
+   <link rel="icon" type="image/x-icon" href="/icon/favicon (2).ico">
+</head>
+<div class="container">
+   <div class="row">
+      <div class="col-md-6 mx-auto mt-5">
+         <div class="payment">
+            <div class="payment_header">
+               <div class="check"><i class="fa fa-check" aria-hidden="true"></i></div>
+            </div>
+            <div class="content">
+               <h1>Payment Success !</h1>
+               <p>Your payment was done successfully. </p>
+               <p>Must appreciated for your support (^o^)</p>
+               <p>Your order will be deliver as soon as possible, sit tight for your purchase.</p>
+               <a href="index.html">Press here and continue search for any extra craves</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+</body>
+<audio id="audio" preload="auto" src="/audio/comfybgm.mp3" autoplay loop>
+   Unsupported in Firefox
+</audio>
+
+<script>
+   audio = document.getElementById("audio")
+   audio.volume = 0.04
+
+   function setCookie(c_name, value, exdays) {
+      var exdate = new Date();
+      exdate.setDate(exdate.getDate() + exdays);
+      var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+      document.cookie = c_name + "=" + c_value;
+   }
+
+   function getCookie(c_name) {
+      var i, x, y, ARRcookies = document.cookie.split(";");
+      for (i = 0; i < ARRcookies.length; i++) {
+         x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+         y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+         x = x.replace(/^\s+|\s+$/g, "");
+         if (x == c_name) {
+            return unescape(y);
+         }
+      }
+   }
+
+   var song = document.getElementsByTagName('audio')[0];
+   var played = false;
+   var tillPlayed = getCookie('timePlayed');
+   function update() {
+      if (!played) {
+         if (tillPlayed) {
+            song.currentTime = tillPlayed;
+            song.play();
+            played = true;
+         }
+         else {
+            song.play();
+            played = true;
+         }
+      }
+
+      else {
+         setCookie('timePlayed', song.currentTime);
+      }
+   }
+   setInterval(update, 1000);
+</script>
+
+</html>

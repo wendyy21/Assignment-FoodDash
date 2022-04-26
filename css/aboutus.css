@@ -1,0 +1,130 @@
+header{
+    margin-top: 80px;
+}
+
+h1 {
+    color: rgb(95, 73, 73);
+}
+
+.about {
+    font-size: 27px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+label {
+    color: #974848;
+    font-size: 45px;
+}
+
+.title, .sub-title {
+    text-align: center;
+    color: rgb(150, 38, 38);
+}
+
+.title {
+    padding-top: 60px;
+    font-weight: bolder;
+    font-size: 65px;
+}
+
+.sub-title {
+    padding-top: 20px;
+    padding-bottom: 25px;
+    font-size: 35px;
+}
+
+.form {
+    width: 100%;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+.form input {
+    font-size: 33px;
+    width: 100%;
+    padding: 50px 60px 50px 45px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.email, .name {
+    display: block;
+    border-radius: 30px;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 20px;
+    margin: 20px 30px;
+    background-color: #fff5f5;
+}
+
+.message {
+    border-radius: 30px;
+    height: 700px;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 20px;
+    margin: 20px 30px;
+    background-color: #fff5f5;
+}
+
+
+.container {
+    padding: 2px 16px;
+    width: 1600px;
+    height: 2000px;
+    background-color: #ffe1e1;
+    color: rgb(245, 98, 0);
+    border-radius: 20px;
+}
+
+.sendbtn {
+    font-size: 50px;
+    float: right;
+}
+
+button {
+    background-color: #886a6a;
+    padding: 30px;
+    color: #e0d3d3;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #443d3d;
+}
+
+.addressDe {
+    color: #974848;
+    height: 1200px;
+}
+
+.addressDe a {
+    font-size: 30px;
+    text-decoration: none;
+    color: #886a6a;
+
+}
+
+.addressDe a:hover {
+    background-color: #f0a7a7;
+    border-color: #886a6a;
+    padding: 20px;
+    color: #fff5f5;
+}
+
+.contactfoot {
+    color: #886a6a;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 200px;
+}
+
+p {
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+}

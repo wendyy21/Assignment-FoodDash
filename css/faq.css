@@ -1,0 +1,41 @@
+header {
+  text-align: center;
+}
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: rgba(255, 236, 236, 0.733);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 25px;
+    transition: 0.4s;
+    font-family: Cinzel, serif;
+  }
+  
+.active, .accordion:hover {
+  background-color: rgb(185, 135, 135);
+}
+  
+.accordion:after {
+  color: rgb(117, 61, 61);
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+  
+.panel {
+  padding: 20px 18px;
+  background-color: rgb(255, 221, 221);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.panel p {
+  font-family: 'Fauna One', serif;
+  font-size: 25px;
+}

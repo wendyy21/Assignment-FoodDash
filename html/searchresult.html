@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content=" Food and Grocery You Love, We Delievered. ">
+    <meta name="keywords" content="Food,Grocery,Beverages">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Phone size diff need this to adjust -->
+    <link rel="stylesheet" href="/css/search.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Food Dash | Search Results</title>
+    <link rel="icon" type="image/x-icon" href="/icon/favicon (2).ico">
+</head>
+
+<body>
+    <audio id="audio" preload="auto" src="/audio/comfybgm.mp3" autoplay loop>
+        Unsupported in Firefox
+    </audio>
+
+    <script>
+        audio = document.getElementById("audio")
+        audio.volume = 0.04
+
+        function setCookie(c_name, value, exdays) {
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() + exdays);
+            var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+            document.cookie = c_name + "=" + c_value;
+        }
+
+        function getCookie(c_name) {
+            var i, x, y, ARRcookies = document.cookie.split(";");
+            for (i = 0; i < ARRcookies.length; i++) {
+                x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+                y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+                x = x.replace(/^\s+|\s+$/g, "");
+                if (x == c_name) {
+                    return unescape(y);
+                }
+            }
+        }
+
+        var song = document.getElementsByTagName('audio')[0];
+        var played = false;
+        var tillPlayed = getCookie('timePlayed');
+        function update() {
+            if (!played) {
+                if (tillPlayed) {
+                    song.currentTime = tillPlayed;
+                    song.play();
+                    played = true;
+                }
+                else {
+                    song.play();
+                    played = true;
+                }
+            }
+
+            else {
+                setCookie('timePlayed', song.currentTime);
+            }
+        }
+        setInterval(update, 1000);
+    </script>
+    <nav id="topnav">
+        <ul>
+            <li><span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776;</span></li>
+            <li><a href="/html/index.html" style="width: 375px; font-size: 40px; padding-top: 10px">FOOD DASH</a> </li>
+            <li style="float:right"><a href="/html/login.html"><i class=" fa fa-user"><br>Profile</i></a></li>
+            <li style="float:right"><a href="/html/contactUs.html"><i class=" fa fa-phone"><br>Contact</i></a></li>
+            <li style="float:right"><a href="/html/login.html"><i class=" fa fa-shopping-cart"><br>Cart</i></a></li>
+        </ul>
+    </nav>
+
+    <nav id="sidenav">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a class="active" href="/html/index.html"><i class="fa fa-home"></i> Home</a>
+            <a href="/html/contactUs.html"><i class="fa fa-fw fa-phone"></i> Contact</a>
+            <button class="dropdown-btn"><i class="fa fa-info"></i> &nbsp;More
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/html/aboutUs.html"> <i class="fa fa-comment"></i> &nbsp;About Us</a>
+                <a href="/html/faq.html"><i class="fa fa-question"></i> &nbsp; FAQ</a>
+            </div>
+            <a href="/html/login.html"><i class="fa fa-sign-in"></i> &nbsp; Login</a>
+        </div>
+    </nav>
+    <br>
+    <main>
+        <header>Search Results</header>
+        <table class="width-80 table-food" id="table-food-id">
+            <tr>
+                <th style="width: 15%">Restaurants/Shops</th>
+                <th style="width: 20%">Reference Image</th>
+                <th style="width: 40%">Description</th>
+            </tr>
+
+
+            <tr>
+                <td>Shokudō Niban</td>
+                <td><a href="/html/shop.html?shopid=shokudo-niban"><img src="/Image/ImageIndex/shop1menu3.png"
+                            alt="Shokudō-Niban" style="width: 50%; height: auto;"></a></td>
+                <td>Quaint and humble joints in the heart of Georgetown. Inspired by honest designs, eatery and coffee.
+                </td>
+            <tr>
+                <td>Mexico Taco Taco</td>
+                <td><a href="/html/shop.html?shopid=mexico-taco-taco"><img src="/Image/ImageIndex/shop2menu2.webp"
+                            alt="Mexico-taco-taco" style="width: 50%; height: auto;"></a></td>
+                <td>If you love authentic tasting Mexican tacos, burritos TACO TACO is top in Malaysia. The tastes are
+                    incredible and the prices are reasonable.</td>
+            </tr>
+            <tr>
+                <td>Perfecto Pizza</td>
+                <td><a href="/html/shop.html?shopid=perfecto-pizza"><img src="/Image/ImageIndex/shop3menu4.jpg"
+                            alt="Perfecto-Pizza" style="width: 50%; height: auto;"></a></td>
+                <td>Cheese is fatty, meat toppings tend to be rich, and the sauce is sweet. Perfecto pizza always serve
+                    you with their best receipe.</td>
+            </tr>
+            <tr>
+                <td>Cake Crush</td>
+                <td><a href="/html/shop.html?shopid=cake-crush"><img src="/Image/ImageIndex/shop4menu4.jpg"
+                            alt="Cake-Crush" style="width: 50%; height: auto;"></a></td>
+                <td>Cake tailor shop which provide whole and sliced cake. Our cake just like your crush, make your heart
+                    bom bom everytime.</td>
+            </tr>
+            <tr>
+                <td>Nippon Maki</td>
+                <td><a href="/html/shop.html?shopid=nippon-maki"><img src="/Image/ImageIndex/shop5menu6.png"
+                            alt="Nippon-Maki" style="width: 50%; height: auto;"></a></td>
+                <td>Watashitachi no tabemono oishi! If you feel this sentence weird, it is normal because we straight
+                    away use google and translate.</td>
+            </tr>
+            <tr>
+                <td>K-Food Restaurant</td>
+                <td><a href="/html/shop.html?shopid=k-food"><img src="/Image/ImageIndex/shop6menu3.jpg"
+                            alt="K-Food-Restaurant" style="width: 50%; height: auto;"></a></td>
+                <td>Typical korean restaurant with no creativity.</td>
+            </tr>
+            <tr>
+                <td>Sweet Hub</td>
+                <td><a href="/html/shop.html?shopid=sweet-hub"><img src="/Image/ImageIndex/shop7menu3.jpg"
+                            alt="Sweet-Hub" style="width: 50%; height: auto;"></td>
+                </td>
+                <td>A shop that full of sweet stuff and people. Who? Of course including you - our sweet sweet customer.
+                </td>
+            </tr>
+            <tr>
+                <td>Mamma-Mia</td>
+                <td><a href="/html/shop.html?shopid=mammamia"><img src="/Image/ImageIndex/shop8menu2.jpg" alt="Mammamia"
+                            style="width: 50%; height: auto;"></td>
+                </td>
+                <td>From our shop name you can see we are full of mee and your mummy.</td>
+            </tr>
+            <tr>
+                <td>SEOUL CHICKEN</td>
+                <td><a href="/html/shop.html?shopid=seoul-chicken"><img src="/Image/ImageIndex/shop9menu2.png"
+                            alt="Seoul-Chicken" style="width: 50%; height: auto;"></a></td>
+                <td>Main selling point is chicken but not chicken rice shop. We fried chicken here and make it hot than
+                    you.</td>
+            </tr>
+            <tr>
+                <td>The Book Sandwich Cafe</td>
+                <td><a href="/html/shop.html?shopid=the-book-sandwich-cafe"><img src="/Image/ImageIndex/shop10menu3.png"
+                            alt="The-Book-Sandwich-Cafe" style="width: 50%; height: auto;"></a></td>
+                <td>A cafe that with a book in our name but we do not have any book in our shop and food. Obviously we
+                    are trying to be a knowledgeable shop but i guess we failed.</td>
+            </tr>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <hr class="footer_start">
+            <a href="#" class="fa fa-facebook" style="color:white; font-size: 20px;"></a>
+            <a href="#" class="fa fa-twitter" style="color:white; font-size: 20px;"></a>
+            <a href="#" class="fa fa-instagram" style="color:white; font-size: 20px;"></a>
+
+            <h2 class="footername">FOOD DASH COMPANY OFFICIAL WEBSITE</h2>
+            <a href="https://www.google.com/maps/place/Tunku+Abdul+Rahman+University+College/@3.2161697,101.7268329,17z/data=!3m1!4b1!4m5!3m4!1s0x31cc3843bfb6a031:0x2dc5e067aae3ab84!8m2!3d3.2161643!4d101.7290216"
+                class="footeraddress" target="_blank">Kampus Utama, Jalan Genting Kelang, 53300 Kuala Lumpur, Wilayah
+                Persekutuan Kuala Lumpur
+                Malaysia</a>
+            <h3 class="footercopy">Copyright &#169; 2022 FOOD DASH. All rights reserved &#174;</h3>
+        </div>
+    </footer>
+</body>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            }
+            else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.body.style.backgroundColor = "white";
+    }
+
+    //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            }
+            else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }   
+</script>
+<script src="/html/login.js"></script>
